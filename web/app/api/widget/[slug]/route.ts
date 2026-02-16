@@ -2,6 +2,7 @@ import { NextResponse } from 'next/server'
 import demoData from '@/data/demo.json'
 import ulavalData from '@/data/ulaval.json'
 import ndgData from '@/data/ndg.json'
+import urbainsData from '@/data/urbains.json'
 
 // Forces the route to be dynamic to handle the [slug] param correctly
 export const dynamic = 'force-dynamic'
@@ -9,7 +10,8 @@ export const dynamic = 'force-dynamic'
 const dataMap: Record<string, any> = {
     'demo': demoData,
     'ulaval': ulavalData,
-    'ndg': ndgData
+    'ndg': ndgData,
+    'urbains': urbainsData
 }
 
 export async function GET(

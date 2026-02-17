@@ -18,7 +18,20 @@
         "amount": "$2,000,000"
     },
     "socialPosts": [],
-    "videos": [],
+    "videos": [
+        {
+            "id": "1",
+            "title": "Patio extérieur - Juin 2025",
+            "url": "/videos/urbains_deck.mp4",
+            "duration": "0:30"
+        },
+        {
+            "id": "2",
+            "title": "Vidéo Promotionnelle - Février 2026",
+            "url": "/videos/urbains_promo_mtl.mp4",
+            "duration": "0:30"
+        }
+    ],
     "featuredReviews": [],
     "projects": [],
     "reviews": []

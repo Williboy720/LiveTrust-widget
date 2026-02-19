@@ -92,7 +92,8 @@ export function VideoCard({ video, isActive = false, onPlay }: VideoCardProps) {
                     ref={videoRef}
                     src={video.url}
                     poster={video.poster}
-                    className="w-full h-full object-cover"
+                    className={`w-full h-full ${video.objectFit === 'contain' ? 'object-contain bg-black' : 'object-cover'}`}
+                    style={video.scale ? { transform: `scale(${video.scale})` } : undefined}
                     playsInline
                     muted={isMuted}
                     preload="metadata"

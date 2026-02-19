@@ -3,6 +3,7 @@ import demoData from '@/data/demo.json'
 import ulavalData from '@/data/ulaval.json'
 import ndgData from '@/data/ndg.json'
 import urbainsData from '@/data/urbains.json'
+import etudiantQcData from '@/data/etudiant_qc.json'
 
 // Forces the route to be dynamic to handle the [slug] param correctly
 export const dynamic = 'force-dynamic'
@@ -11,7 +12,8 @@ const dataMap: Record<string, any> = {
     'demo': demoData,
     'ulaval': ulavalData,
     'ndg': ndgData,
-    'urbains': urbainsData
+    'urbains': urbainsData,
+    'etudiant_qc': etudiantQcData
 }
 
 export async function GET(

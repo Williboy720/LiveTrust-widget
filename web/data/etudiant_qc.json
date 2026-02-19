@@ -1,0 +1,38 @@
+{
+    "companyName": "Peintres Étudiants Québec",
+    "foundedYear": "2023",
+    "onTrustHireSince": "2026",
+    "owners": "Olivier Di Paolo",
+    "serviceArea": "Ville de Québec et ses environs",
+    "incorporationNumber": "1163796411",
+    "warranty": "3 ans (surfaces verticales)",
+    "employees": 12,
+    "rbq": {
+        "number": "8341-9762-24",
+        "url": "https://www.pes.rbq.gouv.qc.ca/RegistreLicences/Recherche/Resultats/FicheDetenteur?mode=Entreprise&crit=r1TSc6INGEWKtcUK6jcX9%2FEByYB22EJQyiTukjrpiNiBdLFBdmxsUQD5hDhRnpniSWRgQPOq4Oq7AYd4UqvduXNoxS7GrtZarAE5%2FQv2Tj9k9EtXsKZODcycaRS2vCDNPQ6XfEMFITtraZrvf%2BgSWdI1bCHzUQnaRXihYVAR6dwCgzg%2FwW%2F1WakL5y%2FEQlAvPSm1g4VFA2m5kBb5Z6Eg%2BjDgP%2F3RBfsoxJt1REsr4AeCvyPLHxJQDPkkI%2FlM6zVEpZtwhJ2SXKQVSmX1zTkO1toeRvQIrEy3nTwpsVndlQwLMBarg5K8XrwQFner%2FlKwLlUYQ8zul7BQt6X42kdq7PhkKnh3d59FOlvOfIdVhdWV4I3ytAEXCTkXBH7jPE6RkDgHnD%2FH27fCDi7GmzlsZSUo6riVYwWsO%2BwI1nnzsL0OEomll%2FtYMiQq%2Fm4l6gvsuOVB8%2FLGWybG4kqxS1jEIwISlAsqPaFydvblf%2FleUbTFeA7%2F2JGIPVVw5Sys%2FVg9zhhpGfpz%2B5GtH48vDyhhycZ6RVM%2BlJ3iZcfLSPjNONIroCD5s4D9Ev%2BDYztiEn7D%2BOa9ns8XLKES4MWIRWkFL0JloxJL4Wft0ruToQbN1NQqPx34rrMCb8icJH8yXmOgl%2BEFdu0Mt09ya1WEC%2FEGQXe4cQ1Sza6bbH5qhBE2XAuzGYufkp0EE4oG3weYpFfa&ent=8mPUKr1DsB46H0dO4Evy6A%3D%3D"
+    },
+    "insurance": {
+        "provider": "Benson Kearley IFG",
+        "url": "https://bkifg.com/",
+        "amount": "$5,000,000"
+    },
+    "socialPosts": [],
+    "videos": [
+        {
+            "id": "1",
+            "title": "Peinture intérieur - Juin 2025",
+            "url": "/videos/etudiant_qc_interieur.mp4",
+            "duration": ""
+        },
+        {
+            "id": "2",
+            "title": "Entrevue Client - Juillet 2025",
+            "url": "/videos/etudiant_qc_entrevue.mp4",
+            "duration": "",
+            "objectFit": "contain"
+        }
+    ],
+    "featuredReviews": [],
+    "projects": [],
+    "reviews": []
+}

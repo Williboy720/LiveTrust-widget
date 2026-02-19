@@ -19,4 +19,6 @@ export interface Video {
     poster?: string
     duration?: string
     forceMuted?: boolean
+    scale?: number
+    objectFit?: 'cover' | 'contain'
 }

@@ -74,12 +74,12 @@ export const trackWidgetClose = (variant: 'A' | 'B' | 'D', slug: string, duratio
 };
 
 export const trackSectionOpen = (sectionName: string, variant: 'A' | 'B' | 'D', slug: string) => {
-    trackEvent({
-        category: 'Widget',
-        action: 'Section Open',
-        label: sectionName,
-        section_name: sectionName,
-        variant: variant,
-        client_slug: slug
-    });
+    if (typeof window !== 'undefined') {
+        window.parent.postMessage({
+            type: 'TRUSTHIRE_SECTION_OPEN',
+            section_name: sectionName,
+            variant: variant,
+            business_id: slug
+        }, '*');
+    }
 };

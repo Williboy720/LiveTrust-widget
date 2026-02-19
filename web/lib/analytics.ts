@@ -62,11 +62,23 @@ export const trackWidgetOpen = (variant: 'A' | 'B' | 'D', slug: string) => {
     });
 };
 
-export const trackWidgetClose = (variant: 'A' | 'B' | 'D', slug: string) => {
+export const trackWidgetClose = (variant: 'A' | 'B' | 'D', slug: string, durationSeconds?: number) => {
     trackEvent({
         category: 'Widget',
         action: 'Close',
         label: `Variant ${variant} - ${slug}`,
+        variant: variant,
+        client_slug: slug,
+        ...(durationSeconds !== undefined && { duration_seconds: Math.round(durationSeconds) })
+    });
+};
+
+export const trackSectionOpen = (sectionName: string, variant: 'A' | 'B' | 'D', slug: string) => {
+    trackEvent({
+        category: 'Widget',
+        action: 'Section Open',
+        label: sectionName,
+        section_name: sectionName,
         variant: variant,
         client_slug: slug
     });

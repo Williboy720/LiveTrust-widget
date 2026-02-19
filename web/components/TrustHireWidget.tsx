@@ -11,7 +11,7 @@ import { LicenseTab } from './LicenseTab'
 import { ReviewRow, type Review } from './ReviewRow'
 import type { Project, Video } from '../types'
 import { Star, Briefcase, Shield, Info, Building2, ChevronDown, ChevronLeft, ChevronRight, X, Smartphone, Share2, Video as VideoIcon } from 'lucide-react'
-import { initGA, trackWidgetView, trackWidgetOpen, trackWidgetClose } from '../lib/analytics'
+import { initGA, trackWidgetView, trackWidgetOpen, trackWidgetClose, trackSectionOpen } from '../lib/analytics'
 
 
 
@@ -229,7 +229,7 @@ export function TrustHireWidget({ slug, variant = 'A' }: TrustHireWidgetProps) {
         const duration = startTimeRef.current ? (now - startTimeRef.current) / 1000 : 0;
 
         setIsClosed(true)
-        trackWidgetClose(variant, slug);
+        trackWidgetClose(variant, slug, duration);
         window.parent.postMessage({ type: 'trusthire-resize', state: 'closed' }, '*')
         // New Analytics Message
         window.parent.postMessage({
@@ -267,7 +267,7 @@ export function TrustHireWidget({ slug, variant = 'A' }: TrustHireWidgetProps) {
         const duration = startTimeRef.current ? (now - startTimeRef.current) / 1000 : 0;
 
         setIsOpen(false)
-        trackWidgetClose(variant, slug);
+        trackWidgetClose(variant, slug, duration);
         // We track 'minimize' (modal close) as the close event for analytics
         window.parent.postMessage({
             type: 'TRUSTHIRE_WIDGET_CLOSE',
@@ -348,6 +348,7 @@ export function TrustHireWidget({ slug, variant = 'A' }: TrustHireWidgetProps) {
                                 title="Avis en ligne"
                                 icon={<Star className="text-[#32BD5E]" size={20} />}
                                 verified={true}
+                                onToggle={(open) => { if (open) trackSectionOpen('Avis en ligne', variant, slug) }}
                             >
                                 <div className="space-y-0">
                                     {reviews.map((platform) => (
@@ -493,6 +494,7 @@ export function TrustHireWidget({ slug, variant = 'A' }: TrustHireWidgetProps) {
                                 title="Conformité & Protection"
                                 icon={<Shield className="text-[#32BD5E]" size={20} />}
                                 verified={true}
+                                onToggle={(open) => { if (open) trackSectionOpen('Conformité & Protection', variant, slug) }}
                             >
                                 <LicenseTab
                                     incorporationNumber={businessInfo.incorporationNumber}
@@ -508,7 +510,10 @@ export function TrustHireWidget({ slug, variant = 'A' }: TrustHireWidgetProps) {
                                 title="Galerie vidéo"
                                 icon={<VideoIcon className="text-[#32BD5E]" size={20} />}
                                 verified={true}
-                                onToggle={setIsVideoGalleryOpen}
+                                onToggle={(open) => {
+                                    setIsVideoGalleryOpen(open)
+                                    if (open) trackSectionOpen('Galerie vidéo', variant, slug)
+                                }}
                             >
                                 <div className="space-y-0 relative group">
                                     {videos && videos.length > 0 ? (
@@ -573,6 +578,7 @@ export function TrustHireWidget({ slug, variant = 'A' }: TrustHireWidgetProps) {
                                 title="L'entreprise"
                                 icon={<Building2 className="text-[#32BD5E]" size={20} />}
                                 verified={true}
+                                onToggle={(open) => { if (open) trackSectionOpen("L'entreprise", variant, slug) }}
                             >
                                 <div className="grid grid-cols-3 gap-2">
                                     <div className="bg-gray-50 rounded-lg p-2 border border-gray-100">
@@ -615,7 +621,10 @@ export function TrustHireWidget({ slug, variant = 'A' }: TrustHireWidgetProps) {
                                 title="Publications sociales"
                                 icon={<Share2 className="text-[#32BD5E]" size={20} />}
                                 verified={true}
-                                onToggle={handleSocialToggle}
+                                onToggle={(open) => {
+                                    handleSocialToggle(open)
+                                    if (open) trackSectionOpen('Publications sociales', variant, slug)
+                                }}
                                 scrollAnchor="start"
                                 scrollTarget="content"
                             >
@@ -683,6 +692,7 @@ export function TrustHireWidget({ slug, variant = 'A' }: TrustHireWidgetProps) {
                             <AccordionSection
                                 title="À propos de TrustHire"
                                 icon={<Info size={16} />}
+                                onToggle={(open) => { if (open) trackSectionOpen('À propos de TrustHire', variant, slug) }}
                             >
                                 <div className="space-y-3">
                                     <div>

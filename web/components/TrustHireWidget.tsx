@@ -74,7 +74,7 @@ interface TrustHireWidgetProps {
 }
 
 export function TrustHireWidget({ slug, variant = 'A' }: TrustHireWidgetProps) {
-    const [isOpen, setIsOpen] = useState(false)
+    const [isOpen, setIsOpen] = useState(true)
     const [projects, setProjects] = useState<Project[]>([])
     const [videos, setVideos] = useState<Video[]>([])
     const [reviews, setReviews] = useState<PlatformData[]>([])
